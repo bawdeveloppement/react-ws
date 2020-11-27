@@ -6,14 +6,13 @@ import TchatNavbar from "./TchatNavbar";
 
 import { ConquestContextConsumer } from "../../lib/Conquest";
 
-const Tchat = props => {
-  return <ConquestContextConsumer children={
-    <div>Hello</div>
-  }>
-  </ConquestContextConsumer>
-}
+// const Tchat = props => {
+//   return <ConquestContextConsumer children={
+//     <div>Hello</div>
+//   }>
+//   </ConquestContextConsumer>
+// }
 
-/*
 class Tchat extends Component {
     constructor (props)
     {
@@ -85,15 +84,13 @@ class Tchat extends Component {
             </ConquestContextConsumer>
             
 
-            {/* Bottom bar : Send message & Files */
-            /*<TchatBottombar events={{
+            {/* Bottom bar : Send message & Files */}
+            <TchatBottombar events={{
               handleSendMessage : this.sendMessage
             }}/>
           </div>
         </div>
-          }
     }
 }
-*/
 
 export default Tchat;
