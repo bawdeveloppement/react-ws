@@ -1,6 +1,5 @@
-import { FC } from "react";
 import { Image } from "../Atoms/Image";
 
-export const ProfilPicture: FC = () => {
-    return <div><Image /></div>
+export const ProfilPicture = () => {
+    return <Image className="w-16 rounded-full" src="https://via.placeholder.com/16" />
 }

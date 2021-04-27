@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Message from "./Message";
-import EmojiLayout from "../Smiley/EmojiLayout";
+import Message from "../Molecules/Message";
+import EmojiLayout from "../Components/Smiley/EmojiLayout";
 
 // On va afficher que les { config.maxLastMsg } derniers messages. Par défault : 10
 // 

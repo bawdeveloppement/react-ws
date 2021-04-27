@@ -1,17 +1,7 @@
 import React, { Component } from "react";
-import MessageList from "./MessageList";
-import TchatBottombar from "./TchatBottomBar";
-import Navbar from "../Nav/Navbar";
-import TchatNavbar from "./TchatNavbar";
-
-import { ConquestContextConsumer } from "../../lib/Conquest";
-
-// const Tchat = props => {
-//   return <ConquestContextConsumer children={
-//     <div>Hello</div>
-//   }>
-//   </ConquestContextConsumer>
-// }
+import MessageList from "../Organisms/MessageList";
+import TchatBottombar from "../Organisms/TchatBottomBar";
+import TchatNavbar from "../Organisms/TchatNavbar";
 
 class Tchat extends Component {
     constructor (props)
@@ -70,25 +60,18 @@ class Tchat extends Component {
     render ()
     {
       const { msgList }  = this.state;
-        return <div className="bg-white flex flex-1 flex-col">
+        return <div className="bg-white flex flex-1 flex-col h-full rounded-md relative">
           <TchatNavbar></TchatNavbar>
           <div className="flex flex-1 flex-col h-full pt-2 bg-gray-100">
-            
-            <ConquestContextConsumer>
-              {({event_messages}) => <MessageList
-                  data={{ msgList : event_messages}} 
-                  config={this.state.config}
-                  events={{ handleProfilClick: this.handleProfilClick }}
-                />
-              }
-            </ConquestContextConsumer>
-            
-
-            {/* Bottom bar : Send message & Files */}
-            <TchatBottombar events={{
-              handleSendMessage : this.sendMessage
-            }}/>
+            <MessageList
+              data={{ msgList }} 
+              config={this.state.config}
+              events={{ handleProfilClick: this.handleProfilClick }}
+            />
           </div>
+          <TchatBottombar events={{
+            handleSendMessage : this.sendMessage
+          }}/>
         </div>
     }
 }

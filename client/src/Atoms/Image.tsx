@@ -1,5 +1,7 @@
-import { FC } from "react"
+import { ReactElement, FC } from "react"
 
-export const Image : FC = (props) => {
+interface ImageProps extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {}
+
+export const Image: FC<ImageProps> = (props): ReactElement => {
     return <img {...props}></img>
 }
