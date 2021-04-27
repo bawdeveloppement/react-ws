@@ -27,7 +27,6 @@ const MessageList = ({ data, config, events }) => {
     />;
     
     return <div id="message-container" className="h-full overflow-auto p-2">
-        <EmojiLayout className="absolute bottom-0 mb-16"></EmojiLayout>
         {messages}
     </div>
 }

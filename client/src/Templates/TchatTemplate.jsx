@@ -59,10 +59,10 @@ class Tchat extends Component {
 
     render ()
     {
-      const { msgList }  = this.state;
-        return <div className="bg-white flex flex-1 flex-col h-full rounded-md relative">
+      const { msgList } = this.state;
+        return <div className="bg-white flex flex-1 flex-col h-full rounded-md relative shadow">
           <TchatNavbar></TchatNavbar>
-          <div className="flex flex-1 flex-col h-full pt-2 bg-gray-100">
+          <div className="flex flex-1 flex-col h-full pt-2">
             <MessageList
               data={{ msgList }} 
               config={this.state.config}

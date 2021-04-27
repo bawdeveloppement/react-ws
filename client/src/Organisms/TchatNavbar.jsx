@@ -2,7 +2,7 @@ import React from "react";
 
 const TchatNavbar = props => {
     return <div 
-    className="flex flex-row justify-between font-bold border-b-4 border-white align-center bg-teal-600 text-white rounded">
+    className="flex flex-row justify-between font-bold border-b-4 align-center bg-teal-600 text-white rounded py-2">
         <div className="h-full w-10 p-2 align-center font-md">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />

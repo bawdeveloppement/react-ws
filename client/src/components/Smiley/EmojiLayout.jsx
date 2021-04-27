@@ -28,7 +28,7 @@ const EmojiLayout = props => {
         //#endregion
     }, []);
 
-    return <div className={"bg-white h-64 max-w-xs flex flex-row rounded py-2 shadow ".concat(props.className ? props.className : "")}>
+    return <div className={" h-64 max-w-xs flex flex-row left-2 rounded absolute bottom-14 py-2 shadow ".concat(props.className ? props.className : "")}>
         <EmojiCategory currentGroup={group} getGroup={setGroup} className="w-8 border-r-2 border-solid border-gray-200 text-center align-center content-center self-center" categories={categories} emojis={emojis}></EmojiCategory>
         <EmojiGroup className="flex-1 flex w-full h-full overflow-y-auto flex-row flex-wrap flex-grow px-1 items-center self-center align-center " group={group} emojis={emojis}></EmojiGroup>
     </div>

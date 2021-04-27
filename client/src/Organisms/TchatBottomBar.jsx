@@ -15,7 +15,9 @@ const TchatBottombar = ({ events }) => {
             SendMessage()
         }
     }
-    return <div className="flex z-30 border-t-2 shadow flex-row items-center flex-wrap justify-between shadow">
+    return <div className="flex z-30 border-t  flex-row items-center flex-wrap justify-between ">
+        <EmojiLayout/>
+
         <svg className="z-10 h-full leading-snug font-normal text-center text-gray-500 hover:text-gray-600 cursor-pointer bg-transparent rounded text-base w-10 px-2 py-3"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
