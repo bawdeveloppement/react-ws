@@ -1,5 +1,5 @@
 {
-  "name": "react-tchat-socket",
+  "name": "react-tchat-module",
   "version": "0.1.0",
   "private": false,
   "author": {
@@ -8,25 +8,40 @@
     "url": "https://github.com/bawdeveloppement"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
+    "@testing-library/jest-dom": "5.12.0",
+    "@testing-library/react": "11.2.6",
+    "@testing-library/user-event": "13.1.5",
+    "@testing-library/react-hooks": "5.1.2",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/jest": "latest",
+    "typescript": "4.2.4",
+    "cross-env": "7.0.3",
     "pnpm": "^5.5.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "socket.io-client": "^2.3.0",
-    "tailwindcss": "^1.5.2",
-    "websocket": "^1.0.32"
+    "react-scripts": "4.0.3",
+    "socket.io-client": "^4.0.1",
+    "postcss": "8.2.13",
+    "postcss-cli": "8.3.1",
+    "postcss-preset-env": "6.7.0",
+    "tailwindcss": "2.1.2",
+    "autoprefixer": "10.2.5",
+    "npm-run-all": "4.1.5"
   },
   "scripts": {
-    "start": "pnpm run watch:css && react-scripts start",
-    "build": "pnpm run build:css && react-scripts build",
+    "build:css": "cross-env TAILWIND_MODE=build NODE_ENV=production postcss src/Assets/css/tailwind.css -o src/Assets/css/index.css",
+    "watch:css": "cross-env TAILWIND_MODE=watch NODE_ENV=development postcss src/Assets/css/tailwind.css -o src/Assets/css/index.css --watch",
+    "react-scripts:start": "sleep 5 && react-scripts start",
+    "react-scripts:start-ps": "react-scripts start",
+    "react-scripts:build": "react-scripts build",
+    "start": "run-p watch:css react-scripts:start",
+    "start:ps": "run-p watch:css react-scripts:start-ps",
+    "build": "run-s build:css react-scripts:build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css",
-    "watch:css": "postcss src/assets/css/tailwind.css -o src/assets/css/main.css"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,8 +57,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "postcss-cli": "^7.1.2"
   }
 }
